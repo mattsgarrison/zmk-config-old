@@ -1,0 +1,13 @@
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+#
+# https://zmkfirmware.dev/docs/development/new-shield#kconfigdefconfig
+# The Kconfig.defconfig file is where overrides for various configuration 
+# settings that make sense to have different defaults when this shield is used. 
+
+if SHIELD_3X3
+
+config ZMK_KEYBOARD_NAME
+    default "3X3"
+
+endif
