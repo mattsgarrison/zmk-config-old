@@ -6,5 +6,5 @@
 # may be relevant when using this keyboard. For most keyboards, there
 # is just one additional configuration value for the shield itself.
 
-config SHIELD_3X3
-    def_bool $(shields_list_contains,3X3)
+config SHIELD_12X5
+    def_bool $(shields_list_contains,12X5)

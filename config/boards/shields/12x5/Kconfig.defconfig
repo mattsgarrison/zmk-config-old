@@ -8,6 +8,6 @@
 if SHIELD_3X3
 
 config ZMK_KEYBOARD_NAME
-    default "3X3"
+    default "12x5"
 
 endif
