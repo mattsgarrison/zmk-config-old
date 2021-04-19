@@ -5,9 +5,10 @@
 # The Kconfig.defconfig file is where overrides for various configuration 
 # settings that make sense to have different defaults when this shield is used. 
 
-if SHIELD_3X3
+if SHIELD_12X5
 
 config ZMK_KEYBOARD_NAME
     default "12x5"
-
+	bool "nice!nano"
+	depends on SOC_NRF52840_QIAA
 endif
