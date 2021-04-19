@@ -4,6 +4,38 @@
  * SPDX-License-Identifier: MIT
  */
 
+
+/**
+ *  D006    = P0_06
+ *  D008    = P0_08
+ *  D017    = P0_17  // R0
+ *  D020    = P0_20  // R1
+ *  D022    = P0_22  // R2
+ *  D024    = P0_24  // R3
+ *  D100    = P1_00  // R4
+ *  D011    = P0_11  // R5
+ *  D104    = P1_04  // R6
+ *  D106    = P1_06  // R7
+
+ *  D004    = P0_04  // AIN2; P0.04 (AIN2) is used to read the voltage of the battery via ADC. It can’t be used for any other function.
+ *  D013    = P0_13  // VCC 3.3V; P0.13 on VCC shuts off the power to VCC when you set it to high; This saves on battery immensely for LEDs of all kinds that eat power even when off
+ *  D115    = P1_15
+ *  D113    = P1_13
+ *  D031    = P0_31  // C1    AIN7
+ *  D029    = P0_29  // C0    AIN5
+ *  D002    = P0_02  //       AIN0
+
+ *  D111    = P1_11  // R10 
+ *  D010    = P0_10  // R9    NFC2
+ *  D009    = P0_09  // R8    NFC1
+
+ *  D026    = P0_26
+ *  D012    = P0_12
+ *  D101    = P1_01  // C2
+ *  D102    = P1_02  // C3
+ *  D107    = P1_07  // C4
+*/
+
 / {
     chosen {
         zmk,kscan = &kscan0;
@@ -16,15 +48,25 @@
         columns = <5>;
         rows = <12>;
         col-gpios
-            = <&pro_micro_d 6 GPIO_ACTIVE_HIGH> // col 0 green P100
-            , <&pro_micro_d 5 GPIO_ACTIVE_HIGH> // col 1 red   P024 
-            , <&pro_micro_d 4 GPIO_ACTIVE_HIGH> // col 2 white P022
+            = <&pro_micro_d 29 GPIO_ACTIVE_HIGH>
+            , <&pro_micro_d 31 GPIO_ACTIVE_HIGH>
+            , <&pro_micro_d 101 GPIO_ACTIVE_HIGH>
+            , <&pro_micro_d 102 GPIO_ACTIVE_HIGH>
+            , <&pro_micro_d 107 GPIO_ACTIVE_HIGH>
             ;
 
         row-gpios
-            = <&pro_micro_d 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row 0 green P113
-            , <&pro_micro_d 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row 1 red   P111
-            , <&pro_micro_d 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row 2 white P010
+            = <&pro_micro_d 17  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&pro_micro_d 20  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&pro_micro_d 22  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&pro_micro_d 24  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&pro_micro_d 100 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&pro_micro_d 11  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&pro_micro_d 104 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&pro_micro_d 106 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&pro_micro_d 9   (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&pro_micro_d 10  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
+            , <&pro_micro_d 111 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
             ;
     };
 };
